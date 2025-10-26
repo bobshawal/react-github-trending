@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 export const useFetchRepos = (page) => {
@@ -10,12 +11,16 @@ export const useFetchRepos = (page) => {
       const DATE = new Date(Date.now() - 10 * 24 * 60 * 60 * 1000)
         .toISOString()
         .split('T')[0];
-      const res = await fetch(
-        `https://api.github.com/search/repositories?q=created:>${DATE}&sort=stars&order=desc&page=${page}`
-      );
-      const data = await res.json();
-      setRepos((prev) => [...prev, ...data.items]);
-      setLoading(false);
+      try {
+        const res = await axios.get(
+          `https://api.github.com/search/repositories?q=created:>${DATE}&sort=stars&order=desc&page=${page}`
+        );
+        setRepos((prev) => [...prev, ...res.data.items]);
+      } catch (error) {
+        console.error('Error fetching repos:', error);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchRepos();
   }, [page]);
