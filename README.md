@@ -1,16 +1,33 @@
-# React + Vite
+# 🚀 React GitHub Trending Repos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React web app that displays the most starred GitHub repositories created in the last 10 days. Built for the Etiqa React Mobile Developer Assessment.
 
-Currently, two official plugins are available:
+## 🔍 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📅 Fetches trending repos created in the last 10 days
+- ⭐ Displays repo name, description, star count, owner username, and avatar
+- 🔄 Infinite scroll with auto-pagination
+- 📱 Responsive layout for mobile and desktop
+- ⚙️ Clean code structure with modular components and hooks
 
-## React Compiler
+## 🧪 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ReactJS (Vite)
+- Axios for API calls
+- GitHub REST API
+- CSS for styling
+- IntersectionObserver for infinite scroll
 
-## Expanding the ESLint configuration
+## 🛠️ Setup Instructions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Clone the repo
+git clone https://github.com/bobshawal/react-github-trending.git
+cd react-github-trending
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
+```
